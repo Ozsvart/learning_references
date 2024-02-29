@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<!--<!DOCTYPE> is not a tag. It is an information for the browser.-->
+<html lang="en">
+    <!--lang is an HTML Global Attribute. These can be used
+    with all HTML elements.
+Country code can also be added to the language code in lang attribute-->
+<head>
+    <!--The <meta> tag defines metadata about an HTML document.
+    It always goes inside the <head> element.
+    It is machine parsable, used by browsers, search engines etc.-->
+    <meta charset="UTF-8">
+    <!--The charset attribute specifies the character encoding.
+    It can be used with <meta> and <script> tags.-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML tags</title>
+    <style>
+        footer div {
+            font-size: 3rem;
+            border: 1px solid black
+        }
+        /* The child inherit the font-size by default
+        but doesn't inherit the border.*/
+        p.important {
+            font-size: inherit;
+        }
+        p {border: inherit;
+        font-size: 1.25rem;}
+        /* In this way, p also inherits the border. */
+        /*Unset sets the value either to initial or to inherit */
+        /* All: unset sets everything to initial or inherit */
+    </style>
+</head>
+<nav>
+    <a href="Projects.html" target="_blank">Projects</a><br>
+    <!--The target attribute specifies where the linked document will open.
+        target="_blank" means that the linked document will open in a new tab-->
+    <a href="About.html" target="_blank">About</a><br>
+</nav>
+<body>
+    <form>
+        <fieldset>
+            <legend>Favorites</legend>
+            <div>
+                <label>Color</label>
+            </div>
+            <!--A div has a display of block by default.
+            But in the browser initial value is inline.-->
+
+            <!--Each element has some browser specific default values.
+            This can be seen in Styles.-->
+            <div>
+                <input type="color">
+                <!--there are many input types, e.g. text, time, date-->
+            </div>
+            <br>
+            <div>
+                <label>File Upload</label>
+            </div>
+            <div>
+                <progress value="50" max="100">50%</progress>
+            </div>
+            <br>
+            <div>
+                <label>Fruit</label>
+            </div>
+            <div>
+                <input list="fruit-list" type="text">
+                <datalist id="fruit-list">
+                    <option value="Banana"></option>
+                    <option value="Ananas"></option>
+                    <option value="Strawberry"></option>
+                    <option value="Peach"></option>
+                    <option value="Melon"></option>
+                    <option value="Cranberry"></option>
+                    <option value="Pear"></option>
+                    <option value="Apple"></option>
+                </datalist>
+            </div>
+        </fieldset>
+    </form>
+    
+    
+</body>
+<footer>
+    <div>This is a span.<p class="important">This is a p.</p></div>
+    <h3>Webpage made with love</h3>
+</footer>
+</html>
+
+<!--HTML References
+
+    HTTP Status Messages
+        1xx: Information
+        2xx: Successful (200 is OK)
+        3xx: Redirection
+        4xx: Client Error(403 Forbidden, 404 Not Found)
+        5xx: Server Error
+
+    HTTP Request Methods
+        GET
+        POST
+        PUT
+        HEAD
+        DELETE-->
