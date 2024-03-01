@@ -1,8 +1,10 @@
-// Declaration
+// Function Declaration
 
 function checkDriverAge() {
   var age = prompt("What is your age?");
   if (Number(age) < 18) {
+    /* The Number() function helps to convert values of other types
+    to numbers.*/
     return "Sorry, you are too young to drive this car. Powering off";
   } else if (Number(age) > 18) {
     return "Powering On. Enjoy the ride!";
@@ -13,7 +15,10 @@ function checkDriverAge() {
 
 checkDriverAge();
 
-// Expression
+/* The Number constructor contains constants and methods
+for working with numbers. */
+
+// Function Expression
 
 var checkDriverAge2 = function () {
   var age = prompt("What is your age?");
