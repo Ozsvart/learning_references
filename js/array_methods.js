@@ -23,6 +23,13 @@ const filteredNames = items.filter((item) => item.name.length > 4)
 
 console.log(filteredNames)
 
+// filter odd numbers
+
+const numbers = [8, 19, 27, 30, 85, 57, 56, 2]
+
+const odds = numbers.filter((num) => num % 2 === 1);
+console.log(odds)
+
 // filter implemented
 
 /*  Parameters:
@@ -97,8 +104,8 @@ console.log(total);
 
 // The accumulator ( in this case currentTotal) is the value resulting from the previous call to cb function.
 // On the first call, its value is initialValue.
-// If initialvalue is specified, cb starts executing with the first value in the array as currentValue.
-// If initialvalue is not specified, accumulator is initialized to the first value in the array, and cb starts executing with the second value in the array as currentValue.
+// If initialValue is specified, cb starts executing with the first value in the array as currentValue.
+// If initialValue is not specified, accumulator is initialized to the first value in the array, and cb starts executing with the second value in the array as currentValue.
 
 
 //another reduce example
