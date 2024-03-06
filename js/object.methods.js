@@ -62,8 +62,8 @@ Object.entries(object).map((value) => {
 /* Syntax:
         Object.fromEntries(iterable)
         
-        The parameter is an iterable, such as an Array or a Map, containing a list of objects. Ech object should have two properties:
-        0 : a string or a symbol representing the property key
+        The parameter is an iterable, such as an Array or a Map, containing a list of objects. Each object should have two properties:
+        0: a string or a symbol representing the property key
         1: the property value
         
         The returned value is a new object whose properties are given by the entries of the iterable. */
