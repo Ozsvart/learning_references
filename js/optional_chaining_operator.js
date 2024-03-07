@@ -25,12 +25,8 @@ let andrei_pokemon = {
     }
 }
 
-// using if statement 
-if(andrei_pokemon.pikachu && andrei_pokemon.pikachu.weight) {
-    let weight2 = andrei_pokemon.pikachu.weight
-} else {
-    let weight2 = undefined
-}
+// using ternary operator
+const weight2 = (andrei_pokemon.pikachu && andrei_pokemon.pikachu.weight) ? andrei_pokemon.pikachu.weight : undefined
 
 // using optional chaining operator
 let weight3 = andrei_pokemon?.pikachu?.weight
