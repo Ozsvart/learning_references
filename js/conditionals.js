@@ -15,8 +15,7 @@ function checkDriverAge() {
 
 checkDriverAge();
 
-/* The Number constructor contains constants and methods
-for working with numbers. */
+/* The Number constructor contains constants and methods for working with numbers. */
 
 // Function Expression
 
@@ -47,3 +46,64 @@ function checkDriverAge(age) {
 }
 
 checkDriverAge();
+
+// Conditional (ternary) operator
+/* The only operator that takes three operands: a condition, followed by a question mark, then an expression to execute if the condition is truthy,
+followed by a colon and an expression to execute if the condition is falsy.
+This operator is frequently used as an alternative to an if...else statement. */
+/* falsy: it has a value that equals or can be converted to false. Falsy expressions are: null, NaN, 0, "", undefined.
+    truthy: it has a value that equals or can be converted to true */
+/* Syntax:
+    condition ? expression1 : expression2; */
+
+const answer = isUserValid(true) ? "You may enter" : "Access denied";
+
+//
+function isUserValid(bool) {
+  return bool;
+}
+
+// using if...else statement
+function condition() {
+  if (isUserValid(true)) {
+    return "Your account number is 1234";
+  } else {
+    return "Your account number is not available";
+  }
+}
+
+const answer2 = condition();
+
+// using ternary operator
+
+const automatedAnswer =
+  "Your account # is " + (isUserValid(false) ? "1234" : "not available");
+
+// conditional chain
+
+function example() {
+  return con ? val : con2 ? val2 : con3 ? val3 : val4;
+}
+
+// switch statement
+
+function moveCommand(direction) {
+  var whatHappens;
+  switch (direction) {
+    case "forward":
+      whatHappens = "You encounter a dragon";
+      break;
+    case "back":
+      whatHappens = "You arrived home";
+      break;
+    case "right":
+      whatHappens = "You found a river";
+      break;
+    case "left":
+      whatHappens = "You saw a little troll";
+      break;
+    default:
+      whatHappens = "Please enter a valid direction";
+  }
+  return whatHappens;
+}
