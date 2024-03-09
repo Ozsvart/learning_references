@@ -58,7 +58,7 @@ async function playerStart() {
   await movePLayer(350, "Left");
 }
 
-// Fetching with Async Await (ES8)
+// Fetching with Async Await(ES8)
 
 async function fetchUsers() {
   const response = await fetch("https://jsonplaceholder.typicode.com/users");
@@ -135,3 +135,13 @@ async function getData() {
   console.log("posts", posts);
   console.log("albums", albums);
 }
+
+// Promise.allSettled
+/* The Promise.allSettled() static method takes an iterable of promises as input and returns a single Promise. This returned promise fulfills when al  the input's promises settle, with an array of objects that describe the outcome of each promise.*/
+
+const promiseOne = new Promise((resolve, reject) => setTimeout(resolve, 3000));
+const promiseTwo = new Promise((resolve, reject) => setTimeout(reject, 3000));
+
+Promise.all([promiseOne, promiseTwo]).then((data) => console.log(data));
+
+Promise.allSettled([promiseOne, promiseTwo]).then((data) => console.log(data));
