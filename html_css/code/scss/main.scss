@@ -10,19 +10,31 @@ body {
     background: var(--primary-color);
 } */
 
-
 // With SCSS
-$primary-color: #272727;
-$accent-color: #ff652f;
-$text-color: #fff;
-$font-weights: (
-    "regular": 400,
-    "medium": 500,
-    "bold": 700
-);
-//Dollar-sign indicates the variables
+
+@import "./_resets";
+@import "./_variables";
+
+// Prefixes will be automatically added to the compiled css file.
+
 body {
     background: $primary-color;
-    font-weight: map-get($font-weights, bold);
     color: $text-color
 }
+
+//Nesting
+
+.main {
+    width: 80%;
+    margin: 0 auto;
+
+    #{&}_paragraph {
+        font-weight: map-get($font-weights, bold);
+
+        &:hover {
+            color: pink;
+        }
+    }
+}
+
+// Files that begin with an underscore are called partials.

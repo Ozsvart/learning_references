@@ -7,8 +7,24 @@
 body {
     background: var(--primary-color);
 } */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   background: #272727;
-  font-weight: 700;
   color: #fff;
+}
+
+.main {
+  width: 80%;
+  margin: 0 auto;
+}
+.main .main_paragraph {
+  font-weight: 700;
+}
+.main .main_paragraph:hover {
+  color: pink;
 }/*# sourceMappingURL=main.css.map */
