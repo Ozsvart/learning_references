@@ -1,3 +1,28 @@
-.nyuszi {
-    color: red
+// Adding variables with CSS
+
+/* :root {
+    --primary-color: #272727;
+    --accent-color: #ff652f;
+    --text-color: #fff;
+}
+
+body {
+    background: var(--primary-color);
+} */
+
+
+// With SCSS
+$primary-color: #272727;
+$accent-color: #ff652f;
+$text-color: #fff;
+$font-weights: (
+    "regular": 400,
+    "medium": 500,
+    "bold": 700
+);
+//Dollar-sign indicates the variables
+body {
+    background: $primary-color;
+    font-weight: map-get($font-weights, bold);
+    color: $text-color
 }
