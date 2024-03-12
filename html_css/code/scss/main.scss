@@ -17,6 +17,10 @@ body {
 
 // Prefixes will be automatically added to the compiled css file.
 
+@function weight($weight-name) {
+    @return map-get($font-weights, $weight-name);
+}
+
 body {
     background: $primary-color;
     color: $text-color
@@ -29,7 +33,8 @@ body {
     margin: 0 auto;
 
     #{&}_paragraph {
-        font-weight: map-get($font-weights, bold);
+        //font-weight: map-get($font-weights, bold);
+        font-weight: weight(regular);
 
         &:hover {
             color: pink;
