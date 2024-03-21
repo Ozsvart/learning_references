@@ -1,9 +1,8 @@
 // Promises (ES6)
 
-/* A promise is an object that may produce a single value some time in the future.
-Either a resolved value, or a reason that it's not resolved (it is rejected).
+/* A promise is an object that may produce a single value some time in the future: either a resolved value, or a reason that it's not resolved (it is rejected).
 A promise can be:
-    fulfilled
+    resolved
     rejected
     pending */
 /* The Promise object represents the eventual completion or failure of an asynchronous operation and its resulting value. */
@@ -67,7 +66,25 @@ async function fetchUsers() {
 }
 
 // How to create a promise
+/* A promise in JS works just as in real life.
+A promise takes two parameters (resolve, reject).*/
+let p = new Promise((resolve, reject) => {
+  let a = 1 + 1;
+  if (a === 2) {
+    resolve("Success");
+  } else {
+    reject("Failed");
+  }
+});
 
+/* .then takes the resolved parameter, .catch takes the reject */
+p.then((message) => {
+  console.log("This is in the then " + message);
+}).catch((message) => {
+  console.log("This is in the catch " + message);
+});
+
+// another example
 const promise = new Promise((resolve, reject) => {
   if (true) {
     resolve("It worked");
@@ -118,6 +135,32 @@ Promise.all([promise, promise2, promise3, promise4]).then((values) => {
 });
 
 /* Promise.all takes an array of promises, the values will be returned as an array. */
+
+// another example for Promise.all
+
+const recordVideoOne = new Promise((resolve, reject) => {
+  resolve("Video 1 Recorded");
+});
+const recordVideoTwo = new Promise((resolve, reject) => {
+  resolve("Video 2 Recorded");
+});
+const recordVideoThree = new Promise((resolve, reject) => {
+  resolve("Video 3 Recorded");
+});
+
+Promise.all([recordVideoOne, recordVideoTwo, recordVideoThree]).then(
+  (messages) => {
+    console.log(messages);
+  }
+);
+
+// Promise.race
+/* If you want to wait just for one of the videos is completed, you can use Promise.race. It gives back only the first video. */
+Promise.race([recordVideoOne, recordVideoTwo, recordVideoThree]).then(
+  (message) => {
+    console.log(message);
+  }
+);
 
 // Fetching data from an API
 
