@@ -1,3 +1,98 @@
+// Functions
+
+function print(value) {
+  console.log(value);
+}
+
+print("Hello World!");
+
+/* If you check console.dir(print), you will find that a function in JS is merely like an object.
+A function is just like an object, except you can call it with a parenthesis, and you can pass different parameters to it. */
+
+// Callback function
+/* A callback function is a function passed into another function as an argument, which is then invoked inside the outer function. */
+function useCallback(cb) {
+  cb("Hello");
+}
+
+useCallback(print);
+/* The above example is equal to
+ 
+ const cb = print
+ cb("Hello")
+ */
+
+// with arrow function
+
+useCallback((value) => console.log(value));
+
+// Converting normal functions to arrow functions
+
+// Named function with two parameters
+function sum(a, b) {
+  return a + b;
+}
+
+let sum2 = (a, b) => a + b; // In this way everything after the arrow is supposed to be returned.
+
+// Named function with one parameter
+function isPositive(number) {
+  return number >= 0;
+}
+
+let isPositive2 = (number) => number >= 0; // If there is only one parameter, the brackets can be removed.
+
+// Named function with no parameters
+function randomNumber() {
+  return Math.random;
+}
+
+let randomNumber2 = () => Math.random;
+
+// Anonymous function
+/* This is the place where anonymous function really shine. */
+document.addEventListener("click", function () {
+  console.log("Click!");
+});
+
+document.addEventListener("click", () => console.log("Click!"));
+
+/* Arrow functions redefine the .this keyword. */
+
+class Person {
+  constructor(name) {
+    this.name = name;
+  }
+  printNameArrow() {
+    setTimeout(() => {
+      console.log("Arrow: " + this.name);
+    }, 1000);
+  }
+
+  printNameFunction() {
+    setTimeout(function () {
+      console.log("Function: " + this.name);
+    }, 1000);
+  }
+}
+
+let someone = new Person("Bob");
+someone.printNameArrow();
+someone.printNameFunction();
+
+//
+function printPerson(cb) {
+  console.log(cb);
+}
+
+const person = { name: "Kyle" };
+
+printPerson(person.name);
+/* Arrow function prints out the name, but normal function doesn't print out anything.
+A normal function redefines this according to the scope, arrow function doesn't redefine this.*/
+
+// A signin function
+
 const database = [
   { username: "Viki", password: "123" },
   { username: "Panír", password: "Panka" },
@@ -5,10 +100,6 @@ const database = [
   { username: "Márk", password: "baba" },
   { username: "Andris", password: "mentor" },
 ];
-
-/* Arrays are a special type of objects with numbered indexes.
-In JS, arrays use numbered indexes.
-In jS, objects use named indexes.*/
 
 const newsFeed = [
   { username: "Bobby", timeline: "So tired from all this learning" },
