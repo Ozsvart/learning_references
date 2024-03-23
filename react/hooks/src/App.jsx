@@ -1,12 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 // Hooks can't be used in class components, only in function components.
 // The hooks must always execute in the same order. This is the reason why hooks can't be called conditionally.
 
-function initialCount() {
+/* function initialCount() {
   console.log("Run the function every time");
   return 4;
-}
+} */
+
 function App() {
   //const [count, setCount] = useState(4);
 
@@ -25,6 +26,9 @@ function App() {
   const [state, setState] = useState({ count: 4, theme: "blue" });
   const count = state.count;
   const theme = state.theme;
+  const [resourceType, setResourceType] = useState("posts");
+  const [items, setItems] = useState([]);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   /* function decrementCount() {
     setCount(count - 1);
   } */
@@ -57,12 +61,45 @@ while the function version, which takes the preCount decrements by two.*/
       };
     });
   }
+
+  function handleResize() {
+    setWindowWidth(window.innerWidth);
+  }
+  /* The useEffect hook is a kind of side effect. */
+
+  useEffect(() => {
+    fetch(`https://jsonplaceholder.typicode.com/${resourceType}`)
+      .then((response) => response.json())
+      .then((json) => setItems(json));
+  }, [resourceType]);
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+  /* The second parameter is an array. When anything you take in the array changes, useEffect is going to run. */
+
   return (
     <>
-      <button onClick={decrementCount}>-</button>
-      <span>{count}</span>
-      <span>{theme}</span>
-      <button onClick={incrementCount}>+</button>
+      <div>{windowWidth}</div>
+      <div>
+        <button onClick={decrementCount}>-</button>
+        <span>{count}</span>
+        <span>{theme}</span>
+        <button onClick={incrementCount}>+</button>
+      </div>
+      <br />
+      <div>
+        <button onClick={() => setResourceType("posts")}>Posts</button>
+        <button onClick={() => setResourceType("users")}>Users</button>
+        <button onClick={() => setResourceType("comments")}>Comments</button>
+        <h1>{resourceType}</h1>
+        {items.map((item) => {
+          return <pre>{JSON.stringify(item)}</pre>;
+        })}
+      </div>
     </>
   );
 }
