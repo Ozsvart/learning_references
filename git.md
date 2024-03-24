@@ -18,8 +18,8 @@
 
 When you upload files to GitHub it will be stored in a Git repository. When changes are made, Git will automatically start to track and manage the changes. During a collaboration with others you will continually:
 
-- <mark>pull</mark> all the latest changes made by the collaborators from the remote repository on GitHub
-- <mark>push</mark> back one's own changes to the same remote repository on GitHub
+- **pull** all the latest changes made by the collaborators from the remote repository on GitHub
+- **push** back one's own changes to the same remote repository on GitHub
 
 ## Create Repository on the Command Line
 
@@ -74,7 +74,6 @@ Command: `git pull`
 |      Feature A Branch       |      Feature A Branch       |
 |      Feature A Commit       |      Feature B Commit       |
 |   `git branch feature_a`    |   `git branch feature_b`    |
-|  `git checkout feature_a`   |  `git checkout feature_b`   |
 | `git checkout –b feature_a` | `git checkout –b feature_b` |
 
 Commands:
