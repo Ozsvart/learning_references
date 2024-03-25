@@ -42,3 +42,5 @@ The content of main.ts can also be removed.
 
 To create a distribution folder: "npm run build"
 Production version: "npm run preview"*/
+
+/* About config options: https://www.typescriptlang.org/tsconfig */
