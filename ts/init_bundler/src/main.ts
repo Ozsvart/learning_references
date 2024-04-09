@@ -104,3 +104,18 @@ console.log(name, options)
 }
 
 printNameAndAge("sdf", { age: 28 })
+
+// Destructured Parameters
+
+type Options = {
+    debugMode?: boolean
+    indentLevel?: number
+}
+
+function printNameAndOptions(name: string, { debugMode = false, indentLevel }: Options = {}) {
+ console.log(name, debugMode, indentLevel)
+}
+
+printNameAndOptions("sdf")
+
+/* If you have default values, you won't need to add a type manually. */
