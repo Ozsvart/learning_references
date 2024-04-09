@@ -96,3 +96,11 @@ function printName2(name: string): void {
 
 /* The function above doesn't return anything. So what is the return type? It is set to void.
 In TS undefined and void hasa slightly different meaning. Void means that this returns nothing and won't return anything at all. */
+
+// Optional Parameters
+
+function printNameAndAge(name: string, options?: { age: number }) {
+console.log(name, options)
+}
+
+printNameAndAge("sdf", { age: 28 })
