@@ -66,3 +66,33 @@ interface PersonInterface {
         street: "Main St."
     }
 }
+
+// Defining Functions
+
+function printName(name: string, name2: string) {
+    console.log(name, name2)
+}
+
+function sum(a: number, b: number) {
+    return "sdf"
+}
+
+const num = sum(1, 2) // TypeScript knows that the return type will be a string.
+
+//
+function printPerson(person: {name: string}) {
+    console.log(person.name)
+}
+
+const personPrint = {name: "Kyle", age: 28}
+
+printPerson(personPrint)
+
+// Void Type
+
+function printName2(name: string): void {
+    console.log(name)
+}
+
+/* The function above doesn't return anything. So what is the return type? It is set to void.
+In TS undefined and void hasa slightly different meaning. Void means that this returns nothing and won't return anything at all. */
