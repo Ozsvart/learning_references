@@ -119,3 +119,21 @@ function printNameAndOptions(name: string, { debugMode = false, indentLevel }: O
 printNameAndOptions("sdf")
 
 /* If you have default values, you won't need to add a type manually. */
+
+// Typing Variables as Functions
+
+function sumWithCallback(a: number, b: number, cb: (sum: number) => void) {
+    cb(a + b)
+}
+
+sumWithCallback(1, 2, (sum) => {
+    console.log(sum)
+})
+
+//
+
+type PrintNameFunc = (name: string) => void
+
+function f(name: string) {
+    return
+}
